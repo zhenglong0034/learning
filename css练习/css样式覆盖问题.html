@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>css样式覆盖</title>
+</head>
+<body>
+  <!-- 示例 1 继承属性，子元素最终 是离得近的父级元素  -->
+  <div>
+    <p>
+      <span>我的老家就住在这个屯</span>
+    </p>
+  </div>
+
+  <!-- 示例 2 自身有属性时，覆盖 继承 -->
+  <div>
+    <p>
+      <a>我的老家就住在这个屯</a>
+    </p>
+  </div>
+
+  <!-- 示例 3 优先级 以及覆盖；标签 1 类 10 id: 100 内联：1000  伪元素(:first-child等)  1; 伪类： 10
+      但是 是不是 是一个标签可以干掉一个类呢？？？
+   -->
+   <!-- 显示为 .div-span的color  -->
+   <div>
+     <div>
+       <div>
+         <div>
+           <div>
+             <div>
+               <div>
+                 <div>
+                   <div>
+                     <div>
+                       <div>
+                         <div>
+                           <div>
+                             <div>
+                               <div>
+                                 <span class="div-span">123455667ghgh</span>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <!-- 示例 4 验证 id 与类的影响 -->
+   <div class="one">
+     <div class="one">
+       <div class="one">
+         <div class="one">
+           <div class="one">
+             <div class="one">
+               <div class="one">
+                 <div class="one">
+                   <div class="one">
+                     <div class="one">
+                       <div class="one">
+                         <div class="one">
+                           <div class="one">
+                             <div class="one">
+                               <div class="one">
+                                 <span class="div-span">123455667ghgh</span>
+                                 <p id = "div-p"> 今天我，俺也里看雪泡过</p>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+  <!-- 示例 5 内联样式 -->
+   <div class="one">
+     <div class="one">
+       <div class="one">
+         <div class="one">
+           <div class="one">
+             <div class="one">
+               <div class="one">
+                 <div class="one">
+                   <div class="one">
+                     <div class="one">
+                       <div class="one">
+                         <div class="one">
+                           <div class="one">
+                             <div class="one">
+                               <div class="one">
+                                 <span class="div-span">123455667ghgh</span>
+                                 <p id = "div-p" style="color: yellow"> 今天我，俺也里看雪泡过</p>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+<p>综上： 标签 1 类 10 id: 100 内联：1000; !important: max;  伪元素(:first-child等)  1; 伪类： 10</p>
+<p>这些具体的 1  10 100 只是用来便于区别以及计算比较等，并不是真的 11个标签就会覆盖类</p>
+</body>
+<style type="text/css">
+/* 示例 1 2
+  div {
+    background: red;
+  }
+  p {
+    background: blue
+  }
+  a {
+    background: green
+  }*/
+ /* 示例3
+   div div div div div div div div div div div div div div div span {
+    color: red;
+  }
+  .div-span {
+    color: blue;
+  }*/
+ /*示例4 显示为 .div-span 因为div-span 会覆盖掉 父类
+  .one .one{
+    color: red;
+  }
+  .div-span {
+    color: black;
+  }*/
+/*示例4 显示为 .one span 因为上面为 11 下面为10
+  .one span {
+    color: red;
+  }
+  .div-span {
+    color: black;
+  }*/
+
+/* 示例4 显示为#div-p
+ .one .one .one .one .one .one .one .one .one .one .one .one .one .one .one p{
+    color: red;
+  }
+  #div-p {
+    color: black;
+  }*/
+
+/* 示例5 显示为 标签中的内敛
+ .one .one .one .one .one .one .one .one .one .one .one .one .one .one .one p{
+    color: red;
+  }
+  #div-p {
+    color: blue;
+  }*/
+
+/* 示例5 显示为 p 的 green，!important 面前都是渣
+ .one .one .one .one .one .one .one .one .one .one .one .one .one .one .one p{
+    color: red;
+  }
+  #div-p {
+    color: blue;
+  }
+
+ p {
+    color: green !important;
+  }*/
+
+
+</style>
+</html>

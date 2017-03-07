@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index post</title>
+</head>
+<body>
+	<form action="http://localhost:8003/list_post" method="POST">
+	First: <input type="text" name="first_name">  <br>
+
+	Last : <input type="text" name="last_name">
+	<input type="submit" value="Submit">
+	</form>
+
+	<div>
+		<input id="sub" type="text" name="test">
+		<button onclick="sub()">提交</button>
+		<div id="myDiv"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	var id = document.getElementById('sub')
+	function sub() {
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		    xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  // 可跨域请求，http://localhost:8003/post/method，Node-express  的 express3.js 为服务器，但要对方法设置返回头
+		  xmlhttp.open("POST","http://localhost:8003/post/method", true);
+		  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		  var value = id.value
+		  xmlhttp.send("test=" + value);
+		  xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		    }
+		  }
+	     }
+
+</script>
+</html>
