@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>css行内元素属性设置</title>
+</head>
+<body>
+   <div>eerererer</div>
+   <span class="span-config">陈芬</span>
+</body>
+<style type="text/css">
+/* 通过对比对于 行内元素 对于width height  margin-top margin-bottom 设置是无效的
+但对 line-height margin-left margin-right padding 的设置还是起作用的；
+  .span-config {
+    border: 1px solid red;
+    width: 400px;
+    line-height: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    padding: 10px 30px 50px 100px;
+  }*/
+
+/* 但设置dispay: inline-block; 行内元素称为行内 块元素，此时所有的 设置都是生效的；
+ .span-config {
+    display: inline-block;
+    border: 1px solid red;
+    width: 400px;
+    line-height: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    padding: 10px 30px 50px 100px;
+  }*/
+</style>
+<script type="text/javascript">
+  const arr1 = [9, 12, 45, 12, 5, 12, 12]
+
+/**
+ * 数组去重第一种方法：先利用sort进行排序，是根据每个值的Unicode 进行排序，不稳定的，会改变数组原来顺序；
+ * 然后将
+ *
+ */
+arr1.sort()
+
+console.log(arr1)
+for (var i = 1, len = arr1.length; i < arr1.length; i++) {
+  if (arr1[i-1] === arr1[i]) {
+    console.log(i + ' ==' + arr1.splice(i, 1))
+    i--
+  }
+}
+console.log(arr1)
+
+</script>
+</html>

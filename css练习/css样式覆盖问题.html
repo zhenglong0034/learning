@@ -123,6 +123,12 @@
    </div>
 <p>综上： 标签 1 类 10 id: 100 内联：1000; !important: max;  伪元素(:first-child等)  1; 伪类： 10</p>
 <p>这些具体的 1  10 100 只是用来便于区别以及计算比较等，并不是真的 11个标签就会覆盖类</p>
+
+<!-- 示例 6 class 先后问题 -->
+   <div>
+     <div class="classA classB">一念执着 -- 范艺丹 </div>
+   </div>
+
 </body>
 <style type="text/css">
 /* 示例 1 2
@@ -186,5 +192,13 @@
   }*/
 
 
+/* 示例 6 虽然在div 的class 的定义中，classA 在前面 classB 在后面，但是其 样式在 属性相同的情况下 类为10 ，
+看哪个类后面加载，元素 最终的属性是与 其 加载顺序有关 而不是在元素中 出现的顺序有关
+.classB {
+  color: blue;
+}
+.classA {
+  color: red;
+}*/
 </style>
 </html>
