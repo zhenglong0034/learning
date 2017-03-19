@@ -1,4 +1,4 @@
-var char = 'afsafdsfdsas'
+var char = 'afsafdsfdsasAghjkdfdsgbng'
 
 
 /**
@@ -25,6 +25,13 @@ for (var i in obj) {
 console.log(ca + ': ' + dd)
 */
 
+
+/**
+ * 第二种方法： 先将字符串进行split('') 排成数组，然后 进行sort() 排序，此时所有的字符按顺序排列在一起
+ * 然后对 数组进行遍历，字符相同时，记录前后相同的字符的开始，不同时，记录结束位置，然后与存储的比较
+ * 当对数组完成一次遍历后可以得到 一个记录字符 以及其最长的 次数
+ * @type {Array}
+ */
 var arr = []
 
 arr = char.split('')
@@ -40,14 +47,43 @@ for(var i = 0, len = arr.length; i < len; i++) {
       start = i
     }
   } else {
-    end = i
-    temp = true
-    if(end - start + 1 > num){
-      c = arr[i]
-      num = end - start + 1
-      console.log(num)
+    // 要判定 是否已经走过 上面的相等判断 至 temp 为false
+    if(!temp) {
+      end = i
+      temp = true
+      if(end - start + 1 > num){
+        c = arr[i]
+        num = end - start + 1
+        console.log(num)
+      }
     }
   }
 }
 
 console.log(c + ': ' + num)
+
+
+/**
+ * 第三种方法：先将字符打乱成数组，然后将其排序并组合成新字符串，然后利用正则表达式([a-zA-Z])\1* 进行分割 成相同值的数组
+ * 然后 通过sort 排序长度，并取数组最长 的字符及长度
+ * @type {Array}
+ */
+// var arr = []
+
+// arr = char.split('')
+
+// arr.sort()
+// var str = arr.join('')
+
+
+// var so = str.match(/([a-zA-Z])\1*/g)
+// console.log(so)
+// so.sort(function(a, b) {
+//   return b.length - a.length
+// })
+// console.log(so)
+
+// console.log(so[0][0] + so[0].length)
+
+
+
