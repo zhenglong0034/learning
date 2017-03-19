@@ -30,6 +30,7 @@ var arr = []
 arr = char.split('')
 
 arr.sort()
+
 console.log(arr)
 var start, end, num = 0, temp=true, c
 for(var i = 0, len = arr.length; i < len; i++) {
