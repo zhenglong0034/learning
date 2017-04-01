@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>全局属性</title>
+</head>
+<body>
+<!-- accesskey  规定激活元素的快捷键 -->
+<a href="http://www.w3school.com.cn/html/" accesskey="h">HTML 教程</a><br />
+<a href="http://www.w3school.com.cn/css/" accesskey="c">CSS 教程</a>
+
+<!-- contenteditable  规定元素内容是否可编辑 -->
+<p contenteditable="true">这是一段可以编辑的文字</p>
+
+<!-- data-* 属性的设置与修改 -->
+<div data-type="edit" id="type">data-* 的属性 以及设置</div>
+
+<!-- ltr  默认。从左向右的文本方向。rtl 从右向左的文本方向。 -->
+<div dir="ltr">123简直了，我不信！！！</div>
+<div dir="rtl">123简直了，我不信！！！</div>
+
+<p draggable="true">可拖动的属性</p>
+
+<!-- tabindex 规定元素的 tab 键次序 -->
+<a href="http://www.w3school.com.cn/" tabindex="2">W3School</a><br />
+<a href="http://www.google.com/" tabindex="1">Google</a><br />
+<a href="http://www.microsoft.com/" tabindex="3">Microsoft</a></body>
+
+
+<!-- translate  规定是否应该翻译元素内容 目前无浏览器支持 -->
+<script type="text/javascript">
+  var edit = document.getElementById('type')
+  console.log(edit.dataset.type)
+  edit.dataset.ss = 'dddd'
+  // console.log(edit.data('edit')) //jquery 读取
+  // console.log(edit.data('edit', '66')) //jquery  设置
+</script>
+</html>
