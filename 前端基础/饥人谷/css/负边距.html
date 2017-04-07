@@ -1,0 +1,112 @@
+<!-- 绝对定位元素
+
+当元素被设置为绝对定位的时候其top、right、bottom、left值是指离最近的非static元素的距离，经典的垂直居中的一种方式正是利用的绝对定位元素的负边距实现的 -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>负边距布局</title>
+</head>
+<style type="text/css">
+  .first-parent {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+  }
+  .first-content {
+    position: absolute;
+    line-height: 100px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    margin-top: -50px;
+    margin-left: -50px;
+  }
+</style>
+<body>
+<div class="first-parent">
+  <div class="first-content">
+  444
+  </div>
+</div>
+</body>
+</html>
+ -->
+<!-- 在一个宽度为100px的div中右3个float:left的子元素，宽度为40px，由于一排放不下，最后一个被移动到了下一行,
+设置第三个 margin-left: -30px，发现第三个元素移上去了并且覆盖了第二个元素20px，经典的多列布局正是利用此原理 -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>float</title>
+</head>
+<style type="text/css">
+  .parent {
+    overflow: hidden;
+    width: 100px;
+    border: 1px solid blue;
+    content: '';
+  }
+  .first, .second, .third {
+    float: left;
+    width: 40px;
+    border: 1px solid red;
+  }
+  .third {
+    margin-left: -30px;
+    background-color: red;
+  }
+</style>
+<body>
+  <div class="parent">
+    <div class="first">3435</div>
+    <div class="second">3435</div>
+    <div class="third">3435</div>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多列布局</title>
+</head>
+<style type="text/css">
+  .parent {
+    width:500px;
+    margin:10px;
+    border:dashed 1px orange;
+    overflow:hidden;
+  }
+  .first {
+    float: left;
+    width: 100%;
+  }
+  .content {
+    height:200px;
+    margin-right:100px;
+    background:rgba(255,0,0,0.5);
+  }
+  .second {
+    width:100px;
+    height:200px;
+    float:left;
+    margin-left:-100px;
+    background:rgba(0,255,0,0.5);
+  }
+</style>
+<body>
+  <div class="parent">
+    <div class="first">
+      <div class="content">
+        ContentContentContentContentContentContent
+        ContentContentContentContentContentContent
+      </div>
+    </div>
+    <div class="second">345535</div>
+  </div>
+</body>
+</html>

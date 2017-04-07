@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>css属性</title>
+</head>
+<style type="text/css">
+  #two-triangle {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid red;
+    border-right: 10px solid blue;
+  }
+    #right-triangle {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid red;
+    border-right: 10px solid rgba(0,0,0,0);
+  }
+    #triangle {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid red;
+    border-right: 10px solid rgba(0,0,0,0);
+    border-left: 10px solid rgba(0,0,0,0);
+  }
+
+</style>
+<body style="position: relative">
+   <div id="two-triangle"></div>
+   <br />
+   <div id="right-triangle"></div>
+   <br />
+   <div id="triangle"></div>
+
+ <!-- 合并 最终的间距 为20px -->
+   <div style="position: sticky; margin-bottom: 20px;border: 1px solid red;">121212121</div>
+   <div style="margin-top: 10px; border: 1px solid red;">121212ererer</div>
+  <br/>
+
+<!-- 即使包裹 了一级，也会遵循 合并的规则 -->
+   <div>
+     <div style="margin-bottom: 20px;border: 1px solid red;">1122</div>
+   </div>
+   <div style="margin-top: 10px; border: 1px solid red;">121212121</div>
+   <br/>
+
+<!-- 包裹 了一级，并且设置子级 的 display: inline-block 不再合并margin -->
+   <div>
+     <div style="display: inline-block;margin-bottom: 20px;border: 1px solid red;">1122</div>
+     <div style="display: inline-block;margin-bottom: 30px;border: 1px solid red;">1122</div>
+   </div>
+   <div style="margin-top: 10px; border: 1px solid red;">121212121</div>
+
+<!-- 包裹 了三级级，并且每一级都不设置 padding 以及border,这时依旧按照最大的原则进行合并 -->
+   <div style="margin-top: 30px;">
+     <div style="margin-top: 20px;">
+       <div style="margin-top: 120px;">1122</div>
+     </div>
+   </div>
+<!--  -->
+   <div style="margin-top: 30px; margin-bottom: 10px">
+   </div>
+<!-- 固定宽度的 块 元素， 可以设置auto 水平对齐 -->
+   <div style="height: 200px;width: 200px;margin: 0 auto; border:1px solid red">
+      232
+   </div>
+<!-- 固定宽度的 块 元素， 可以设置auto 水平对齐 -->
+   <div style="height: 200px;width: 200px;margin: 0 auto; border:1px solid red">
+      232
+   </div>
+</body>
+</html>

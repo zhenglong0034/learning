@@ -1,0 +1,92 @@
+<!--边距三列等高
+原理
+
+利用超大内边距和相同的负外边距
+
+优势
+
+纯CSS实现，比较简单
+
+不足
+
+无法看到下边，不适用于一些需要border的场景  -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>经典三列布局 -- 边距三列等高</title>
+  <meta charset="utf-8">
+</head>
+<style type="text/css">
+  .container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid red;
+  }
+  .item {
+    float: left;
+    margin-right: 10px;
+    padding-bottom: 100000px;
+    margin-bottom: -100000px;
+    width: 100px;
+    background-color: #ccc;
+  }
+</style>
+<body>
+
+<div class="container">
+   <div class="item">
+     23
+   </div>
+   <div class="item">
+     abc
+   </div>
+   <div class="item">
+     !@#
+   </div>
+</div>
+   <div>56557</div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>经典三列布局 -- 负边距三列布局 </title>
+</head>
+<style type="text/css">
+  .container {
+    overflow: hidden;
+    border: 1px solid red;
+  }
+  .wrap {
+    float: left;
+    width: 100%;
+    border: 1px solid blue;
+  }
+  .left {
+    float: left;
+    width: 150px;
+    margin-left: -100%;
+  }
+  .right {
+    float: left;
+    width: 150px;
+    margin-left: -155px;
+  }
+  .main {
+    margin-left: 152px;
+    margin-right: 152px;
+  }
+</style>
+<body>
+   <div class="container">
+     <div class="wrap">
+       <div class="main">main</div>
+     </div>
+     <div class="left">left</div>
+     <div class="right">right</div>
+   </div>
+</body>
+</html>
