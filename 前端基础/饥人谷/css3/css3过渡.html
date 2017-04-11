@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>css过渡</title>
+  <meta charset="utf-8">
+</head>
+<style type="text/css">
+  div{
+    height:15px;
+    width:15px;
+  }
+
+  div:hover{
+    height: 450px;
+    width: 450px;
+  }
+  div {
+    border: 1px solid red;
+    transition: 5s height, 2s 3s width cubic-bezier(.83,.97,.05,1.44);
+  }
+</style>
+<body>
+  <div>过渡及动画</div>
+</body>
+</html>

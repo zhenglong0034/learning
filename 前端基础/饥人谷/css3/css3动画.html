@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>css3动画</title>
+  <meta charset="utf-8">
+</head>
+<style type="text/css">
+  @keyframes pp {
+    from {background: #ccc;}
+    50% {background: red;}
+    to {background: blue;}
+  }
+  /*infinite 无限播放；
+  也可以 指定次数 如：3*/
+  div {
+    animation: 20s pp infinite steps(10);
+  }
+</style>
+<body>
+  <div>css3动画</div>
+</body>
+</html>
