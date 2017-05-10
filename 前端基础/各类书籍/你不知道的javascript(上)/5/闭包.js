@@ -19,3 +19,5 @@ function foo() {
 var baz = foo() // 输出 1003
 // baz() 调用foo() 的返回
 baz() // baz() 输出 2  3
+
+
