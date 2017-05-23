@@ -41,6 +41,6 @@ console.log(Object.is(a, b)) // false
 
 var a = NaN
 var b = NaN
-console.log(a == b)  // false
+console.log(NaN == NaN)  // false
 console.log(a === b) // false
 console.log(Object.is(a, b)) // true

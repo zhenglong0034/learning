@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>flex练习</title>
+</head>
+<style type="text/css">
+  body {
+    margin: 0px;
+  }
+  .container {
+    border: 1px solid red;
+  }
+  .flex {
+    display: flex;
+    border: 1px solid blue;
+  }
+  .flex > span:first-child {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 150px;
+  }
+  .flex > span:last-child {
+    border: 1px solid gray;
+    display: inline-block;
+    width: 200px;
+  }
+  input {
+    width: 100%;
+  }
+</style>
+<body>
+
+<div class="container">
+  <div class="flex" >
+      <span><em>*</em>商户地址</span>
+      <span>
+        1111
+      </span>
+  </div>
+  <div class="flex" >
+      <span><em>*</em>商户信息</span>
+      <span>
+        <input type="" name="">
+      </span>
+  </div>
+</div>
+</body>
+</html>

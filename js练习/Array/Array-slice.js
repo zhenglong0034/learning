@@ -21,9 +21,9 @@ console.log(copy)*/
  * slice只有 一个参数并且为负数时，代表从尾部开始，-1代表倒数第一位，-2代表倒数第二位，无第二个参数即到结束为止；
  * @type {[type]}
  */
-/*var copy = fruits.slice(-2)
-console.log(copy)
-*/
+// var copy = fruits.slice(-2)
+// console.log(copy)
+
 
 /**
  * slice 的 start 与end代表位置，为负数时表示 从尾部开始，-1代表倒数第一位，-2代表倒数第二位
