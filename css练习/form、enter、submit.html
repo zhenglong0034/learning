@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>form enter submit 等等</title>
+    <meta charset="UTF-8">
+  </head>
+  <style>
+    form {
+      border: 1px solid red;
+    }
+</style>
+  <body>
+    <form id="ff" onsubmit="submt()">
+       <!-- <input type="button" onclick="clik()" value="按钮" /> -->
+      <input />
+      <button onclick="clik(event)" >点击</button>
+      <input type="button" onclick="clikTwo(event)" value="按钮" />
+      <!-- <button onclick="clik()" >点击</button>
+      <button onclick="clikTwo()" >点击</button> -->
+    </form>
+  </body>
+<!--  当 <form> 里仅含有一个 <input type="text"> 时 -->
+  <!-- <script>
+    /**
+    进入页面 立即执行并且去设置 onsubmit 返回 false
+    效果等于 为form 标签设置 onsubmit="return false"
+    可以阻止input 的enter 刷新时间
+    */
+    (function(){
+      let form = document.getElementById('ff')
+      form.onsubmit = function() {
+        return false
+      }
+    })()
+    /**
+    为form 设置onsubmit 事件的方式 会走到submt() 即使返回 false 依然刷新
+    */
+    function submt() {
+      return false
+    }
+  </script> -->
+<!-- 有两个 input 的情况，enter 不会触发 form 的onsubmit 事件
+<script>
+    function submt() {
+      debugger
+    }
+
+</script> -->
+<!-- 有一个 <input type="text"> 以及
+  一个 <input onclick="clik()" type="button" value="按钮" /> 情况，
+enter只会触发submit，click 只会click 不会 submit-->
+  <!--
+  <script>
+    function submt() {
+      debugger
+    }
+    function clik() {
+      debugger
+    }
+</script> -->
+  <!-- 有一个 <input type="text"> 以及
+  一个 <input onclick="clik()" type="submit" value="按钮" /> 情况，
+enter会先触发click事件，然后再触发 submit， 点击按钮 与此一致,
+与有一个 <input type="text"> 以及一个<button onclick="clik()">提交</button> 一致
+此种情况下，button被当成了submit 按钮-->
+<!--    <script>
+    function submt() {
+      debugger
+    }
+    function clik() {
+      debugger
+    }
+  </script> -->
+  <!-- 有一个 <input type="text"> 以及
+  两个 <input type="button" value="按钮" /> 情况，
+enter会触发第一个click并触发 submit，click 会先触发自身的click再触发 submit，
+同       <input />
+      <button onclick="clik()" >点击</button>
+      <button onclick="clikTwo()" >点击</button>-->
+  <!-- <script>
+    function submt() {
+      debugger
+    }
+    function clik() {
+      debugger
+    }
+    function clikTwo() {
+      debugger
+    }
+  </script> -->
+  <!-- 有一个 <input type="text"> 以及
+  一个 <input type="button" onclick="clik()" value="按钮" />
+  一个<input type="submit" onclick="clikTwo()" value="按钮" />情况时，
+enter会触发type="submit" 的 click并触发 form 的submit，type="submit" 与此相同
+type="button"  只 触发自身的click-->
+   <!-- <script>
+    function submt() {
+      debugger
+    }
+    function clik() {
+      debugger
+    }
+    function clikTwo() {
+      debugger
+    }
+  </script> -->
+  <!-- 对于 一个<input />
+      一个button <button onclick="clik()" >点击</button>
+      一个 type=“submit”<input type="submit" onclick="clikTwo()" value="按钮" />
+
+enter会触发form的第一个 click （不管是 button还是 type=“submit” 那个在前执行哪个）并触发 form 的submit
+type="submit" 与button 都是触发自身的click 然后触发 submit-->
+  <script>
+    function submt() {
+      debugger
+    }
+    function clik(e) {
+      e.preventDefault();
+      debugger
+    }
+    function clikTwo(e) {
+      console.log(e)
+      debugger
+    }
+  </script>
+
+</html>

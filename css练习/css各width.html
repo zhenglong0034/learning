@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>css 各width</title>
+    <meta charset="UTF-8">
+  </head>
+  <style type="text/css">
+  html {
+    box-sizing: content-box;
+  }
+/*   .dd {
+    box-sizing: content-box;
+    width: 1000px;
+    height: 1400px;
+    border: 1px solid red;
+    overflow: hidden;
+  } */
+  .aa {
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    padding: 9px;
+    margin: 7px;
+    position: relative;
+    border: 1px solid green;
+  }
+   .dd {
+     box-sizing: border-box;
+     width: 100px;
+     height: 100px;
+     margin: 13px;
+     padding: 11px;
+     overflow: scroll;
+   }
+  </style>
+  <body>
+    <button onclick="login()">登录</button>
+    <div class="aa">
+      <div class="dd">122
+      31221
+      122312
+      21122312
+      21122312wwwwwwwwwwww
+      211223122112
+      231221</div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    let cls = document.getElementsByClassName('dd')[0]
+    console.log(cls.offsetLeft)
+    function login() {
+      window.open(window.encodeURIComponent('http://baidu.com'))
+    }
+</script>
+</html>

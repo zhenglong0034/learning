@@ -1,0 +1,9 @@
+{
+  "name": "chart-rooms",
+  "version": "0.0.1",
+  "description": "multi chart rooms",
+  "dependencies": {
+    "socket.io": "~0.9.6",
+    "mime": "~1.2.7"
+  }
+}
