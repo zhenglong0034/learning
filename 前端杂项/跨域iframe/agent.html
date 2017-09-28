@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>iframe中介页面</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<script>
+function  pseth() {
+    var iObj = parent.parent.document.getElementById('frame_content');
+    iObjH = parent.parent.frames["frame_content"].frames["iframeC"].location.hash;
+    iObj.style.height = iObjH.split("#")[1]+"px";
+}
+pseth();
+</script>
+
+</body>
+</html>

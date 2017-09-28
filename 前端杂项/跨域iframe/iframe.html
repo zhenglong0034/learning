@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>被iframe嵌套页面</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+文字<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />文字<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />文字<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />文字<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<iframe id="iframeC" name="iframeC" src="" width="0" height="0" style="display:none;" ></iframe>
+
+<script type="text/javascript">
+function sethash(){
+    hashH = document.documentElement.scrollHeight;
+    urlC = "agent.html";
+    document.getElementById("iframeC").src=urlC+"#"+hashH;
+}
+window.onload=sethash;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>1.html</title>
+  </head>
+  <body>
+     <iframe id="ifr" src="css33D.html" frameborder="0" width="100%"></iframe>
+  </body>
+    <script type="text/javascript">
+  // 计算页面的实际高度，iframe自适应会用到
+  function calcPageHeight(doc) {
+      var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)
+      var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
+      var height  = Math.max(cHeight, sHeight)
+      return height
+  }
+  var ifr = document.getElementById('ifr')
+  ifr.onload = function() {
+      var iDoc = ifr.contentDocument || ifr.document
+      var height = calcPageHeight(iDoc)
+      ifr.style.height = height + 'px'
+  }
+</script>
+</html>

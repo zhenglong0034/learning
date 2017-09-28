@@ -6,10 +6,10 @@
   </head>
   <style type="text/css">
   html {
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
 /*   .dd {
-    box-sizing: content-box;
+    box-sizing: border-box;
     width: 1000px;
     height: 1400px;
     border: 1px solid red;
@@ -19,35 +19,33 @@
     box-sizing: border-box;
     width: 150px;
     height: 150px;
-    padding: 9px;
+    padding: 19px;
     margin: 7px;
     position: relative;
     border: 1px solid green;
+    overflow: auto;
   }
    .dd {
      box-sizing: border-box;
      width: 100px;
      height: 100px;
      margin: 13px;
-     padding: 11px;
-     overflow: scroll;
+     padding: 10px;
+
    }
   </style>
   <body>
     <button onclick="login()">登录</button>
     <div class="aa">
-      <div class="dd">122
-      31221
-      122312
-      21122312
-      21122312wwwwwwwwwwww
-      211223122112
-      231221</div>
+      <div class="dd">ssssrealMinsheng.subAccount</div>
     </div>
   </body>
   <script type="text/javascript">
-    let cls = document.getElementsByClassName('dd')[0]
-    console.log(cls.offsetLeft)
+    if (!window.localStorage.getItem('a')) {
+      window.localStorage.setItem('a', 'd')
+    }
+    let cls = document.getElementsByClassName('aa')[0]
+    console.log(cls.scrollTop)
     function login() {
       window.open(window.encodeURIComponent('http://baidu.com'))
     }
